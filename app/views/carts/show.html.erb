@@ -11,8 +11,11 @@
 </thead>
 <tbody>
 <tr>
-
-
+<% @cart.line_items.each do |item| %>
+<tr><td>
+  <%= item.quantity %> &times; <%= item.product.title %></td>
+  </tr>
+  <% end %>
 <tr>
 <td>
 <%= link_to 'Edit', edit_cart_path(@cart) ,class:"w3-button w3-light-gray" %> |
