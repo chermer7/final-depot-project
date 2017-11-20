@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   
   get 'admin/index'
+
   
   controller :sessions do
     get 'login' => :new
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
   resources :orders
   resources :line_items
   resources :carts
-  get 'store/index'
+  #get 'store/index'
 
   resources :products
   get 'static_pages/home'
@@ -30,6 +31,6 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root 'store#index'
+  root 'store#index', as: 'store_index'
 
 end
