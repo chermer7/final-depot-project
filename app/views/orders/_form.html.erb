@@ -27,23 +27,13 @@
   </div>
 
   <div class="w3-panel">
-    <%= f.label :pay_type %>
-    <%= f.text_field :pay_type , class:"w3-input w3-border" %>
-  </div>
-
-  <div class="w3-panel">
-    <%= f.label :integer %>
-    <%= f.text_field :integer , class:"w3-input w3-border" %>
+     <%= f.label :pay_type %>
+    <%= f.select :pay_type, Order.pay_types.keys, prompt: 'Select a payment method',  class:"w3-input w3-border"   %>
   </div>
 
   <div class="actions">
-    <%= f.submit :Submit, class:"w3-button w3-light-gray" %>
+    <%= f.submit :Submit, class:"w3-button w3-border w3-light-gray" %>
   </div>
-  
-  <div class="form-group">
-    <%= f.label :pay_type %>
-    
-    <%= f.select :pay_type, Order.pay_types.keys, prompt: 'Select a payment method',  class:"form-control"   %>
-  </div>
+
   
 <% end %>
